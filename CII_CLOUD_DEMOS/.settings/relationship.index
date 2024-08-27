@@ -24,6 +24,10 @@
     "id" : "_FDeREGRyEe-H4PZhV-tdGQ - offices",
     "version" : "Latest",
     "type" : "schema"
+  }, {
+    "id" : "_FDeREGRyEe-H4PZhV-tdGQ - products",
+    "version" : "Latest",
+    "type" : "schema"
   } ]
 }, {
   "baseItem" : {
