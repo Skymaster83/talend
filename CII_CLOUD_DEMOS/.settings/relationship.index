@@ -13,6 +13,10 @@
     "version" : "Latest",
     "type" : "property"
   }, {
+    "id" : "_FDeREGRyEe-H4PZhV-tdGQ - customers",
+    "version" : "Latest",
+    "type" : "schema"
+  }, {
     "id" : "_FDeREGRyEe-H4PZhV-tdGQ - employees",
     "version" : "Latest",
     "type" : "schema"
