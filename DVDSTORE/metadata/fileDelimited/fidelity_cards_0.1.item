@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.record="http:///orgomg/cwm/resource/record.ecore">
+  <TalendMetadata:DelimitedFileConnection xmi:id="_I8fe4E0CEfCXzZGqhHwMnQ" name="fidelity_cards" dataPackage="_I8fe4U0CEfCXzZGqhHwMnQ" Server="Localhost 127.0.0.1" FilePath="C:/ProjectData/DVDStore/customers_with_fidelity.csv" Format="WINDOWS" Encoding="US-ASCII" FieldSeparatorValue="&quot;,&quot;" RowSeparatorValue="&quot;\n&quot;" UseHeader="true" HeaderValue="1" FirstLineCaption="true" EscapeType="CSV" CsvOption="true" FieldSeparatorType="Comma"/>
+  <orgomg.cwm.resource.record:RecordFile xmi:id="_I8fe4U0CEfCXzZGqhHwMnQ" name="default" dataManager="_I8fe4E0CEfCXzZGqhHwMnQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_I8fe4k0CEfCXzZGqhHwMnQ" id="__2IXUE0BEfCXzZGqhHwMnQ" label="metadata">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_I8fe400CEfCXzZGqhHwMnQ" label="customer_id" length="2" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_I8fe5E0CEfCXzZGqhHwMnQ" label="fidelity_card_number" length="13" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_I8fe5U0CEfCXzZGqhHwMnQ" label="fidelity_card_subscription_date" length="10" talendType="id_Date" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_I8fe5k0CEfCXzZGqhHwMnQ" label="fidelity_level" length="8" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+    </ownedElement>
+  </orgomg.cwm.resource.record:RecordFile>
+</xmi:XMI>
