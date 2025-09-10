@@ -19,6 +19,21 @@
   } ]
 }, {
   "baseItem" : {
+    "id" : "_NJWFIH5rEfCvm8_dhcJf7g",
+    "version" : "0.1",
+    "type" : "job"
+  },
+  "relatedItems" : [ {
+    "id" : "_T3iGUH5pEfCvm8_dhcJf7g",
+    "version" : "Latest",
+    "type" : "property"
+  }, {
+    "id" : "_T3iGUH5pEfCvm8_dhcJf7g - payments",
+    "version" : "Latest",
+    "type" : "schema"
+  } ]
+}, {
+  "baseItem" : {
     "id" : "_UQu6AEEfEfC5CIfRuswcdg",
     "version" : "0.1",
     "type" : "job"
