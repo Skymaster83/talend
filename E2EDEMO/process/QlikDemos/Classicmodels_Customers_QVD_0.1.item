@@ -101,16 +101,6 @@
   </parameters>
   <node componentName="tMysqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="240" posY="240">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBInput_1" show="false"/>
-    <elementParameter field="TEXT" name="COMPONENT_NAME" value="tMysqlInput" show="false"/>
-    <elementParameter field="TEXT" name="VERSION" value="0.102 (ALPHA)" show="false"/>
-    <elementParameter field="TEXT" name="FAMILY" value="Databases/DB Specifics/MySQL" show="false"/>
-    <elementParameter field="CHECK" name="START" value="true" show="false"/>
-    <elementParameter field="CHECK" name="STARTABLE" value="true" show="false"/>
-    <elementParameter field="CHECK" name="SUBTREE_START" value="true" show="false"/>
-    <elementParameter field="CHECK" name="END_OF_FLOW" value="false" show="false"/>
-    <elementParameter field="TEXT" name="HELP" value="org.talend.help.tMysqlInput" show="false"/>
-    <elementParameter field="DIRECTORY" name="IREPORT_PATH" value="" show="false"/>
-    <elementParameter field="DIRECTORY" name="JAVA_LIBRARY_PATH" value="C:\Talend-Studio\studio\configuration\lib\java" show="false"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_9uFnIH5hEfCXa_eM8Mqd0Q" show="false"/>
     <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="MYSQL_8"/>
@@ -464,8 +454,60 @@
       <column defaultValue="" key="false" length="0" name="ORIGINAL_MARK" nullable="true" precision="0" sourceType="BIT" type="id_Boolean" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
+  <node componentName="QVDOutput" componentVersion="1" offsetLabelX="0" offsetLabelY="0" posX="1200" posY="400">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tQVDOutput_1" show="false"/>
+    <elementParameter field="TECHNICAL" name="TACOKIT_COMPONENT_ID" value="cXZkLW91dHB1dCNRVkQjT3V0cHV0" show="false"/>
+    <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="" show="false"/>
+    <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
+    <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
+    <elementParameter field="FILE" name="configuration.dataset.datastore.localFilePath" value="&quot;C:/DemoData/Output/customers_masked.qvd&quot;"/>
+    <elementParameter field="TEXT" name="configuration.$maxBatchSize" value="1000"/>
+    <elementParameter field="CHECK" name="configuration.createFolderIfNotExists" value="true"/>
+    <elementParameter field="CHECK" name="configuration.failIfAlreadyExists" value="false"/>
+    <elementParameter field="TEXT" name="configuration.qvdConfiguration.tableName" value="CustomersMasked"/>
+    <elementParameter field="CLOSED_LIST" name="configuration.qvdConfiguration.mode" value="MEMORY"/>
+    <elementParameter field="TECHNICAL" name="configuration.dataset.__version" value="-1" show="false"/>
+    <elementParameter field="TECHNICAL" name="configuration.dataset.datastore.__version" value="-1" show="false"/>
+    <metadata connector="FLOW" label="customers" name="tQVDOutput_1">
+      <column comment="" key="true" length="19" name="customer_id" nullable="true" pattern="" precision="0" sourceType="BIGINT" type="id_Long" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="65535" name="name" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="65535" name="contact_first_name" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="65535" name="contact_last_name" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="65535" name="email" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="65535" name="phone" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="65535" name="address" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="65535" name="city" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="65535" name="state" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="19" name="sales_rep_id" nullable="true" pattern="" precision="0" sourceType="BIGINT" type="id_Long" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column defaultValue="" key="false" length="0" name="ORIGINAL_MARK" nullable="true" precision="0" sourceType="BIT" type="id_Boolean" originalLength="-1" usefulColumn="true"/>
+    </metadata>
+    <metadata connector="LOOKUP" name="LOOKUP"/>
+    <metadata connector="MERGE" name="MERGE"/>
+    <metadata connector="REJECT" name="REJECT"/>
+  </node>
   <node componentName="tMysqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="1200" posY="240">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBOutput_1" show="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="MYSQL_8"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="" show="false"/>
@@ -617,6 +659,29 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
+  <node componentName="QlikOutput" componentVersion="1" offsetLabelX="0" offsetLabelY="0" posX="1360" posY="400">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tQlikOutput_1" show="false"/>
+    <elementParameter field="TECHNICAL" name="TACOKIT_COMPONENT_ID" value="cWxpayNRbGlrI091dHB1dA" show="false"/>
+    <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="" show="false"/>
+    <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
+    <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
+    <elementParameter field="TEXT" name="configuration.datastore.host" value="https://avaghi-user.eu.qlikcloud.com"/>
+    <elementParameter field="PASSWORD" name="configuration.datastore.apiKey" value="enc:system.encryption.key.v1:tmAefDtAha2PUihI1tyc7E35lpUA0MEmF0XvwnNtNjEAMH1WU7WxPif5WPO1WKwQ970eH2dBjB0eAYzFZBFGJek7BkjY/xnGpYHo22DeMF3a9bkJibbEemrsx/E4flgbxr1K3CaxP1Lg6R5l48e1W/yuiryA5+lBjVXh+OzLZVdGVWD0rmu12ZgsoJglimfh9g3gB+7LQhWtMPjOo0gEW1wUxskpoRNnaaX9Ebw+tq3Bdq2Iw9uzMrQRIJuTArXitDZlv9aB3m/iM2d2M8JVVAjj3owDGCVQST65ZbtieXrfVv2ElARoWDpR8jdgZsR1gC4y5icF0kQS+8ivIJFHDg1k+IEjP6BG/JukEvB4QvUcmrzKbr1TjuvXO/1IWNs33yn9fYKCSsVg7Qiyv2lhq7G4DHC0tc3EZoQc0D2ZhJddj6WLAa6c+UxFLQvinWnfBzVpU0rrmZ8okv4MD55VXy4tKvO4u4bHOxo7jglxG+ozrNOeWSLxV4B5xjLBnLne5re9N24weRkQK6pWHmtYb8XRFAzUhUYZzFg+X0Mnho7w2hWnWUrBlnuCmg8bpwY6hty3bfVs2LRhvWHOXYdQj/fm3h/6K1zPKPfxC3rBRxSwH8c5MO5rfNI3HmNmFE0HoqSyRZcxWquNSshonkGnLJcImAeoX5o="/>
+    <elementParameter field="CLOSED_LIST" name="configuration.outputAction" value="CREATE"/>
+    <elementParameter field="FILE" name="configuration.localFile" value="&quot;C:/DemoData/Output/customers_masked.qvd&quot;"/>
+    <elementParameter field="CHECK" name="configuration.specifyId" value="false" show="false"/>
+    <elementParameter field="TEXT" name="configuration.fileName" value="customers_masked.qvd"/>
+    <elementParameter field="TACOKIT_VALUE_SELECTION" name="configuration.spaceId" value="681c6b43dda316ea7dce8b4a"/>
+    <elementParameter field="CHECK" name="configuration.indexKnowledgeBaseFile" value="true"/>
+    <elementParameter field="TEXT" name="configuration.indexationNumberOfRetries" value="10"/>
+    <elementParameter field="TEXT" name="configuration.indexationDelayBetweenRetriesInSeconds" value="10"/>
+    <elementParameter field="TECHNICAL" name="configuration.datastore.__version" value="-1" show="false"/>
+    <metadata connector="FLOW" name="tQlikOutput_1"/>
+    <metadata connector="FLOW" name="tQlikOutput_1"/>
+    <metadata connector="LOOKUP" name="LOOKUP"/>
+    <metadata connector="MERGE" name="MERGE"/>
+    <metadata connector="REJECT" name="REJECT"/>
+  </node>
   <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tDBInput_1" offsetLabelX="0" offsetLabelY="0" source="tDBInput_1" target="tLogRow_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row1" show="false"/>
@@ -629,12 +694,25 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row3" show="false"/>
   </connection>
-  <connection connectorName="FLOW" label="row4" lineStyle="0" metaname="tLogRow_2" offsetLabelX="0" offsetLabelY="0" source="tLogRow_2" target="tDBOutput_1">
+  <connection connectorName="FLOW" label="row4" lineStyle="0" metaname="tLogRow_2" offsetLabelX="0" offsetLabelY="0" source="tLogRow_2" target="tQVDOutput_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row4" show="false"/>
   </connection>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tQVDOutput_1" offsetLabelX="0" offsetLabelY="0" source="tQVDOutput_1" target="tQlikOutput_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk1" show="false"/>
+  </connection>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBInput_1" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="0;93;185" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="0;93;185"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBOutput_1" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="0;93;185" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="0;93;185"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tQlikOutput_1" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="0;93;185" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="0;93;185"/>
   </subjob>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmi:id="_4QVkQI7kEfC0t5l4d4cDIA" defaultContext="Default" jobType="Standard">
+  <context xmi:id="_4QWLUI7kEfC0t5l4d4cDIA" confirmationNeeded="false" hide="false" name="Default"/>
+  <parameters xmi:id="_4QWLUY7kEfC0t5l4d4cDIA">
+    <elementParameter xmi:id="_4QWLUo7kEfC0t5l4d4cDIA" field="CHECK" name="LOG4J_RUN_ACTIVATE" value="true" show="false"/>
+    <elementParameter xmi:id="_4QWLU47kEfC0t5l4d4cDIA" field="CLOSED_LIST" name="LOG4J_RUN_LEVEL" value="Info" show="false"/>
+    <elementParameter xmi:id="_4QWLVI7kEfC0t5l4d4cDIA" field="TEXT" name="SCREEN_OFFSET_X" value="0" show="false"/>
+    <elementParameter xmi:id="_4QWLVY7kEfC0t5l4d4cDIA" field="TEXT" name="SCREEN_OFFSET_Y" value="0" show="false"/>
+    <elementParameter xmi:id="_4QWLVo7kEfC0t5l4d4cDIA" field="TEXT" name="REPOSITORY_CONNECTION_ID" value="" show="false"/>
+    <elementParameter xmi:id="_4QWLV47kEfC0t5l4d4cDIA" field="TEXT" name="OOZIE_PROPERTY_TYPENAME" value="" show="false"/>
+    <elementParameter xmi:id="_4QWLWI7kEfC0t5l4d4cDIA" field="TEXT" name="OOZIE_HADOOP_DISTRIBUTION" value="" show="false"/>
+    <elementParameter xmi:id="_4QWLWY7kEfC0t5l4d4cDIA" field="TEXT" name="OOZIE_HADOOP_VERSION" value="" show="false"/>
+    <elementParameter xmi:id="_4QWLWo7kEfC0t5l4d4cDIA" field="TEXT" name="OOZIE_ENABLE_KERBEROS" value="" show="false"/>
+    <elementParameter xmi:id="_4QWLW47kEfC0t5l4d4cDIA" field="TEXT" name="OOZIE_NAME_NODE_PRINCIPAL" value="" show="false"/>
+    <elementParameter xmi:id="_4QWLXI7kEfC0t5l4d4cDIA" field="TEXT" name="OOZIE_USERNAME" value="" show="false"/>
+    <elementParameter xmi:id="_4QWLXY7kEfC0t5l4d4cDIA" field="TEXT" name="OOZIE_GROUP" value="" show="false"/>
+    <elementParameter xmi:id="_4QWLXo7kEfC0t5l4d4cDIA" field="TEXT" name="OOZIE_USE_KEYTAB" value="" show="false"/>
+    <elementParameter xmi:id="_4QWLX47kEfC0t5l4d4cDIA" field="TEXT" name="OOZIE_KT_PRINCIPAL" value="" show="false"/>
+    <elementParameter xmi:id="_4QWLYI7kEfC0t5l4d4cDIA" field="TEXT" name="OOZIE_KEY_TAB" value="" show="false"/>
+    <elementParameter xmi:id="_4QWLYY7kEfC0t5l4d4cDIA" field="TEXT" name="OOZIE_ENABLE_OO_KERBEROS" value="" show="false"/>
+    <elementParameter xmi:id="_4QWLYo7kEfC0t5l4d4cDIA" field="TEXT" name="OOZIE_NAME_NODE_END_POINT" value="" show="false"/>
+    <elementParameter xmi:id="_4QWLY47kEfC0t5l4d4cDIA" field="TEXT" name="OOZIE_JOB_TRACKER_ENDPOINT" value="" show="false"/>
+    <elementParameter xmi:id="_4QWLZI7kEfC0t5l4d4cDIA" field="TEXT" name="OOZIE_END_POINT" value="" show="false"/>
+    <routinesParameter xmi:id="_4QWLZY7kEfC0t5l4d4cDIA" id="_p15iwA0QEeqQ96NUWHog4Q" name="d"/>
+    <routinesParameter xmi:id="_4QWLZo7kEfC0t5l4d4cDIA" id="_uDi24CvPEemn7J3ssWShHg" name="r"/>
+  </parameters>
+  <node xmi:id="_4QWLZ47kEfC0t5l4d4cDIA" componentName="cConfig" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="200" posY="80">
+    <elementParameter xmi:id="_4QWLaI7kEfC0t5l4d4cDIA" field="TEXT" name="UNIQUE_NAME" value="cConfig_1" show="false"/>
+    <elementParameter xmi:id="_4QWLaY7kEfC0t5l4d4cDIA" field="MEMO_EDITOR_JAVA" name="CODE" value="dev.langchain4j.model.chat.ChatModel model = dev.langchain4j.model.openai.OpenAiChatModel.builder()&#xA;                .apiKey(&quot;demo&quot;)&#xD;&#xA;                .modelName(&quot;gpt-4o-mini&quot;)&#xA;                .temperature(0.3)&#xA;                .timeout(java.time.Duration.ofSeconds(3000))&#xD;&#xA;                .build();&#xD;&#xA;&#xD;&#xA;camelContext.getRegistry().bind(&quot;chatModel&quot;, model);&#xD;&#xA;&#xD;&#xA;//server-filesystem&#xD;&#xA;McpTransport transport = new StdioMcpTransport.Builder()&#xD;&#xA;.command(List.of(&quot;/usr/bin/npm&quot;, &quot;exec&quot;,&#xD;&#xA;        &quot;@modelcontextprotocol/server-filesystem@0.6.2&quot;,&#xD;&#xA;        // allowed directory for the server to interact with&#xD;&#xA;        new File(&quot;/myFolder&quot;).getAbsolutePath()&#xD;&#xA;))&#xD;&#xA;.logEvents(true)&#xD;&#xA;.build();&#xD;&#xA;&#xD;&#xA;McpClient mcpClient = new DefaultMcpClient.Builder()&#xD;&#xA;.transport(transport)&#xD;&#xA;.build();&#xD;&#xA;&#xD;&#xA;ToolProvider toolProvider = McpToolProvider.builder()&#xD;&#xA;.mcpClients(List.of(mcpClient))&#xD;&#xA;.build();&#xD;&#xA;"/>
+    <elementParameter xmi:id="_4QWLao7kEfC0t5l4d4cDIA" field="CHECK" name="USE_MDC_LOGGING" value="false"/>
+    <elementParameter xmi:id="_4QWLa47kEfC0t5l4d4cDIA" field="MEMO_EDITOR_IMPORT" name="IMPORT" value="import dev.langchain4j.chain.ConversationalChain;&#xA;import dev.langchain4j.data.message.ChatMessage;&#xA;import dev.langchain4j.mcp.McpToolProvider;&#xA;import dev.langchain4j.mcp.client.DefaultMcpClient;&#xA;import dev.langchain4j.mcp.client.McpClient;&#xA;import dev.langchain4j.mcp.client.transport.McpTransport;&#xA;import dev.langchain4j.mcp.client.transport.stdio.StdioMcpTransport;&#xA;import dev.langchain4j.memory.ChatMemory;&#xA;import dev.langchain4j.memory.chat.MessageWindowChatMemory;&#xA;import dev.langchain4j.service.tool.ToolProvider;&#xA;import java.io.File;&#xA;import java.util.List;"/>
+    <elementParameter xmi:id="_4QWLbI7kEfC0t5l4d4cDIA" field="TABLE" name="DRIVER_JAR">
+      <elementValue xmi:id="_4QWLbY7kEfC0t5l4d4cDIA" elementRef="JAR_NAME" value="mvn:dev.langchain4j/langchain4j/1.0.0/jar" id="0"/>
+      <elementValue xmi:id="_4QWLbo7kEfC0t5l4d4cDIA" elementRef="JAR_NAME" value="mvn:dev.langchain4j/langchain4j-open-ai/1.0.0/jar" id="1"/>
+      <elementValue xmi:id="_4QWLb47kEfC0t5l4d4cDIA" elementRef="JAR_NAME" value="mvn:dev.langchain4j/langchain4j-core/1.0.0/jar" id="2"/>
+      <elementValue xmi:id="_4QWLcI7kEfC0t5l4d4cDIA" elementRef="JAR_NAME" value="mvn:org.talend.libraries/okhttp-4.12.0/6.0.0-SNAPSHOT/jar" id="3"/>
+      <elementValue xmi:id="_4QWLcY7kEfC0t5l4d4cDIA" elementRef="JAR_NAME" value="mvn:dev.langchain4j/langchain4j-embeddings-all-minilm-l6-v2/1.0.0-beta5/jar" id="4"/>
+      <elementValue xmi:id="_4QWLco7kEfC0t5l4d4cDIA" elementRef="JAR_NAME" value="mvn:org.talend.libraries/okio-3.11.0/6.0.0-SNAPSHOT/jar" id="5"/>
+      <elementValue xmi:id="_4QWLc47kEfC0t5l4d4cDIA" elementRef="JAR_NAME" value="mvn:org.talend.libraries/okhttp-sse-4.12.0/6.0.0-SNAPSHOT/jar" id="6"/>
+      <elementValue xmi:id="_4QWLdI7kEfC0t5l4d4cDIA" elementRef="JAR_NAME" value="mvn:com.fasterxml.jackson.core/jackson-annotations/2.18.2/jar" id="7"/>
+      <elementValue xmi:id="_4QWLdY7kEfC0t5l4d4cDIA" elementRef="JAR_NAME" value="mvn:com.fasterxml.jackson.core/jackson-core/2.18.2/jar" id="8"/>
+      <elementValue xmi:id="_4QWLdo7kEfC0t5l4d4cDIA" elementRef="JAR_NAME" value="mvn:com.fasterxml.jackson.core/jackson-databind/2.18.2/jar" id="9"/>
+      <elementValue xmi:id="_4QWLd47kEfC0t5l4d4cDIA" elementRef="JAR_NAME" value="mvn:dev.ai4j/openai4j/0.27.0/jar" id="10"/>
+      <elementValue xmi:id="_4QWLeI7kEfC0t5l4d4cDIA" elementRef="JAR_NAME" value="mvn:org.apache.opennlp/opennlp-tools/2.5.4/jar" id="11"/>
+      <elementValue xmi:id="_4QWLeY7kEfC0t5l4d4cDIA" elementRef="JAR_NAME" value="mvn:dev.langchain4j/langchain4j-kotlin/1.0.0-beta5/jar" id="12"/>
+      <elementValue xmi:id="_4QWLeo7kEfC0t5l4d4cDIA" elementRef="JAR_NAME" value="mvn:dev.langchain4j/langchain4j-reactor/1.0.0-beta5/jar" id="13"/>
+      <elementValue xmi:id="_4QWLe47kEfC0t5l4d4cDIA" elementRef="JAR_NAME" value="mvn:dev.langchain4j/langchain4j-easy-rag/1.0.0-beta5/jar" id="14"/>
+      <elementValue xmi:id="_4QWLfI7kEfC0t5l4d4cDIA" elementRef="JAR_NAME" value="mvn:org.talend.libraries/retrofit-2.9.0/6.0.0-SNAPSHOT/jar" id="15"/>
+      <elementValue xmi:id="_4QWLfY7kEfC0t5l4d4cDIA" elementRef="JAR_NAME" value="mvn:org.talend.libraries/converter-jackson-2.9.0/6.0.0-SNAPSHOT/jar" id="16"/>
+      <elementValue xmi:id="_4QWLfo7kEfC0t5l4d4cDIA" elementRef="JAR_NAME" value="mvn:dev.langchain4j/langchain4j-hugging-face/1.0.0-beta5/jar" id="17"/>
+      <elementValue xmi:id="_4QWLf47kEfC0t5l4d4cDIA" elementRef="JAR_NAME" value="mvn:org.talend.libraries/jspecify-1.0.0/6.0.0-SNAPSHOT/jar" id="18"/>
+      <elementValue xmi:id="_4QWLgI7kEfC0t5l4d4cDIA" elementRef="JAR_NAME" value="mvn:org.talend.libraries/jtokkit-1.1.0/6.0.0-SNAPSHOT/jar" id="19"/>
+      <elementValue xmi:id="_4QWLgY7kEfC0t5l4d4cDIA" elementRef="JAR_NAME" value="mvn:dev.langchain4j/langchain4j-open-ai-official/1.0.0-beta5/jar" id="20"/>
+      <elementValue xmi:id="_4QWLgo7kEfC0t5l4d4cDIA" elementRef="JAR_NAME" value="mvn:dev.langchain4j/langchain4j-http-client/1.0.0/jar" id="21"/>
+      <elementValue xmi:id="_4QWLg47kEfC0t5l4d4cDIA" elementRef="JAR_NAME" value="mvn:dev.langchain4j/langchain4j-http-client-jdk/1.0.0/jar" id="22"/>
+      <elementValue xmi:id="_4QWLhI7kEfC0t5l4d4cDIA" elementRef="JAR_NAME" value="mvn:dev.langchain4j/langchain4j-mcp/1.0.0-beta5/jar" id="23"/>
+    </elementParameter>
+    <elementParameter xmi:id="_4QWLhY7kEfC0t5l4d4cDIA" field="LABEL" name="WARNING" value="*Note: External JARs will not be embedded in OSGi bundle by default, to configure it please edit Route Dependencies"/>
+    <elementParameter xmi:id="_4QWLho7kEfC0t5l4d4cDIA" field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <elementParameter xmi:id="_4QWLh47kEfC0t5l4d4cDIA" field="LABEL" name="ROUTE_BREAKPOINT_EXAMPLE" value="Example: Lauguages=Simple, Expression=&quot;${body} contains 'Camel'&quot;"/>
+  </node>
+  <node xmi:id="_4QWLiI7kEfC0t5l4d4cDIA" componentName="cREST" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="200" posY="200">
+    <elementParameter xmi:id="_4QWLiY7kEfC0t5l4d4cDIA" field="TEXT" name="UNIQUE_NAME" value="cREST_1" show="false"/>
+    <elementParameter xmi:id="_4QWLio7kEfC0t5l4d4cDIA" field="TEXT" name="API_ID" value="" show="false"/>
+    <elementParameter xmi:id="_4QWLi47kEfC0t5l4d4cDIA" field="TEXT" name="URL" value="&quot;/route/chat&quot;"/>
+    <elementParameter xmi:id="_4QWLjI7kEfC0t5l4d4cDIA" field="CLOSED_LIST" name="SERVICE_TYPE" value="MANUAL"/>
+    <elementParameter xmi:id="_4QWLjY7kEfC0t5l4d4cDIA" field="TEXT" name="PATH" value="constant(&quot;/customers/&quot;)" show="false"/>
+    <elementParameter xmi:id="_4QWLjo7kEfC0t5l4d4cDIA" field="CLOSED_LIST" name="HTTP_METHOD" value="GET" show="false"/>
+    <elementParameter xmi:id="_4QWLj47kEfC0t5l4d4cDIA" field="CLOSED_LIST" name="CONTENT_TYPE" value="application/xml" show="false"/>
+    <elementParameter xmi:id="_4QWLkI7kEfC0t5l4d4cDIA" field="CLOSED_LIST" name="ACCEPT_TYPE" value="application/xml" show="false"/>
+    <elementParameter xmi:id="_4QWLkY7kEfC0t5l4d4cDIA" field="TEXT" name="RESPONSE_BEAN" value="" show="false"/>
+    <elementParameter xmi:id="_4QWLko7kEfC0t5l4d4cDIA" field="TABLE" name="SCHEMAS">
+      <elementValue xmi:id="_4QWLk47kEfC0t5l4d4cDIA" elementRef="SCHEMA" value="method" id="0"/>
+      <elementValue xmi:id="_4QWLlI7kEfC0t5l4d4cDIA" elementRef="HTTP_VERB" value="POST" id="1"/>
+      <elementValue xmi:id="_4QWLlY7kEfC0t5l4d4cDIA" elementRef="URI_PATTERN" value="&quot;/&quot;" id="2"/>
+      <elementValue xmi:id="_4QWLlo7kEfC0t5l4d4cDIA" elementRef="CONSUMES" value="ANY" id="3"/>
+      <elementValue xmi:id="_4QWLl47kEfC0t5l4d4cDIA" elementRef="PRODUCES" value="ANY" id="4"/>
+      <elementValue xmi:id="_4QWLmI7kEfC0t5l4d4cDIA" elementRef="BEAN" value="" id="5"/>
+    </elementParameter>
+    <elementParameter xmi:id="_4QWLmY7kEfC0t5l4d4cDIA" field="TEXT" name="RESOURCE_CLASS" value="beans.ResourceClass" show="false"/>
+    <elementParameter xmi:id="_4QWLmo7kEfC0t5l4d4cDIA" field="TEXT" name="RESOURCE_OPERATION" value="constant(&quot;operationName&quot;)" show="false"/>
+    <elementParameter xmi:id="_4QWLm47kEfC0t5l4d4cDIA" field="CHECK" name="SKIP_UNMARSHALLING" value="false" show="false"/>
+    <elementParameter xmi:id="_4QWLnI7kEfC0t5l4d4cDIA" field="CHECK" name="ENABLE_SECURITY" value="false"/>
+    <elementParameter xmi:id="_4QWLnY7kEfC0t5l4d4cDIA" field="CLOSED_LIST" name="SECURITY_TYPE" value="BASIC" show="false"/>
+    <elementParameter xmi:id="_4QWLno7kEfC0t5l4d4cDIA" field="TEXT" name="USERNAME" value="&quot;&quot;" show="false"/>
+    <elementParameter xmi:id="_4QWLn47kEfC0t5l4d4cDIA" field="PASSWORD" name="PASSWORD" value="enc:system.encryption.key.v1:S9+p0xYUzfUcP5KJj8JAfD5IqVftAjpSVHJ+OcZr" show="false"/>
+    <elementParameter xmi:id="_4QWLoI7kEfC0t5l4d4cDIA" field="CHECK" name="USE_AUTHORIZATION" value="false" show="false"/>
+    <elementParameter xmi:id="_4QWLoY7kEfC0t5l4d4cDIA" field="TEXT" name="ROLE_NAME" value="&quot;&quot;" show="false"/>
+    <elementParameter xmi:id="_4QWLoo7kEfC0t5l4d4cDIA" field="CLOSED_LIST" name="JWT_KEYSTORE_TYPE" value="JKS" show="false"/>
+    <elementParameter xmi:id="_4QWLo47kEfC0t5l4d4cDIA" field="TEXT" name="JWT_KEYSTORE_URL" value="" show="false"/>
+    <elementParameter xmi:id="_4QWLpI7kEfC0t5l4d4cDIA" field="FILE" name="JWT_KEYSTORE_FILE" value="" show="false"/>
+    <elementParameter xmi:id="_4QWLpY7kEfC0t5l4d4cDIA" field="PASSWORD" name="JWT_KEYSTORE_PASSWORD" value="enc:system.encryption.key.v1:B1QkMMvH8k0Q7gGj/FePx4xzrBYib3LFk5lUEnMq" show="false"/>
+    <elementParameter xmi:id="_4QWLpo7kEfC0t5l4d4cDIA" field="TEXT" name="JWT_KEYSTORE_ALIAS" value="" show="false"/>
+    <elementParameter xmi:id="_4QWLp47kEfC0t5l4d4cDIA" field="TEXT" name="JWT_AUDIENCE" value="" show="false"/>
+    <elementParameter xmi:id="_4QWLqI7kEfC0t5l4d4cDIA" field="CHECK" name="SERVICE_LOCATOR" value="false"/>
+    <elementParameter xmi:id="_4QWLqY7kEfC0t5l4d4cDIA" field="TEXT" name="SERVICE_NAMESPACE" value="&quot;http://www.talend.org/rest/&quot;" show="false"/>
+    <elementParameter xmi:id="_4QWLqo7kEfC0t5l4d4cDIA" field="TEXT" name="SERVICE_NAME" value="&quot;&quot;" show="false"/>
+    <elementParameter xmi:id="_4QWLq47kEfC0t5l4d4cDIA" field="CHECK" name="SERVICE_ACTIVITY_MONITOR" value="false"/>
+    <elementParameter xmi:id="_4QWLrI7kEfC0t5l4d4cDIA" field="CHECK" name="ENABLE_CORRELATION" value="false"/>
+    <elementParameter xmi:id="_4QWLrY7kEfC0t5l4d4cDIA" field="TEXT" name="CORRELATION_VALUE" value="&quot;&quot;" show="false"/>
+    <elementParameter xmi:id="_4QWLro7kEfC0t5l4d4cDIA" field="CHECK" name="LOG_MESSAGES" value="false"/>
+    <elementParameter xmi:id="_4QWLr47kEfC0t5l4d4cDIA" field="TABLE" name="ADVARGUMENTS"/>
+    <elementParameter xmi:id="_4QWLsI7kEfC0t5l4d4cDIA" field="TABLE" name="JAXRS_PROPS"/>
+    <elementParameter xmi:id="_4QWLsY7kEfC0t5l4d4cDIA" field="TABLE" name="SL_META_DATA" show="false"/>
+    <elementParameter xmi:id="_4QWLso7kEfC0t5l4d4cDIA" field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <elementParameter xmi:id="_4QWLs47kEfC0t5l4d4cDIA" field="LABEL" name="ROUTE_BREAKPOINT_EXAMPLE" value="Example: Lauguages=Simple, Expression=&quot;${body} contains 'Camel'&quot;"/>
+  </node>
+  <node xmi:id="_4QWLtI7kEfC0t5l4d4cDIA" componentName="cProcessor" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="480" posY="200">
+    <elementParameter xmi:id="_4QWLtY7kEfC0t5l4d4cDIA" field="TEXT" name="UNIQUE_NAME" value="cProcessor_1" show="false"/>
+    <elementParameter xmi:id="_4QWLto7kEfC0t5l4d4cDIA" field="MEMO_EDITOR_JAVA" name="CODE" value="// Get chatChain from Camel registry&#xD;&#xA;dev.langchain4j.chain.ConversationalChain myChatChain = camelContext.getRegistry().findSingleByType(dev.langchain4j.chain.ConversationalChain.class);&#xA;&#xD;&#xA;String payload = exchange.getMessage().getBody(String.class);&#xD;&#xA;&#xD;&#xA;// invoke chatChain.execute()&#xD;&#xA;String response = myChatChain.execute(payload);&#xD;&#xA;&#xD;&#xA;exchange.getIn().setBody(response);"/>
+    <elementParameter xmi:id="_4QWLt47kEfC0t5l4d4cDIA" field="MEMO_EDITOR_IMPORT" name="IMPORT" value="//import java.util.List;"/>
+    <elementParameter xmi:id="_4QWLuI7kEfC0t5l4d4cDIA" field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <elementParameter xmi:id="_4QWLuY7kEfC0t5l4d4cDIA" field="LABEL" name="ROUTE_BREAKPOINT_EXAMPLE" value="Example: Lauguages=Simple, Expression=&quot;${body} contains 'Camel'&quot;"/>
+  </node>
+  <node xmi:id="_4QWLuo7kEfC0t5l4d4cDIA" componentName="cLog" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="800" posY="200">
+    <elementParameter xmi:id="_4QWLu47kEfC0t5l4d4cDIA" field="TEXT" name="UNIQUE_NAME" value="cLog_1" show="false"/>
+    <elementParameter xmi:id="_4QWLvI7kEfC0t5l4d4cDIA" field="TEXT" name="LOGGING_CATEGORY" value="&quot;TestRoute.cLog_1&quot;"/>
+    <elementParameter xmi:id="_4QWLvY7kEfC0t5l4d4cDIA" field="CLOSED_LIST" name="LEVEL_TYPE" value="WARN"/>
+    <elementParameter xmi:id="_4QWLvo7kEfC0t5l4d4cDIA" field="RADIO" name="NOTHING" value="false"/>
+    <elementParameter xmi:id="_4QWLv47kEfC0t5l4d4cDIA" field="RADIO" name="GROUP_SIZE" value="false"/>
+    <elementParameter xmi:id="_4QWLwI7kEfC0t5l4d4cDIA" field="TEXT" name="SIZE" value="1" show="false"/>
+    <elementParameter xmi:id="_4QWLwY7kEfC0t5l4d4cDIA" field="RADIO" name="GROUP_INTERVAL" value="false"/>
+    <elementParameter xmi:id="_4QWLwo7kEfC0t5l4d4cDIA" field="TEXT" name="INTERVAL" value="1" show="false"/>
+    <elementParameter xmi:id="_4QWLw47kEfC0t5l4d4cDIA" field="TEXT" name="DELAY" value="0" show="false"/>
+    <elementParameter xmi:id="_4QWLxI7kEfC0t5l4d4cDIA" field="CHECK" name="ACTIVE_ONLY" value="true" show="false"/>
+    <elementParameter xmi:id="_4QWLxY7kEfC0t5l4d4cDIA" field="RADIO" name="FORMAT" value="false"/>
+    <elementParameter xmi:id="_4QWLxo7kEfC0t5l4d4cDIA" field="TABLE" name="ARGUMENTS" show="false"/>
+    <elementParameter xmi:id="_4QWLx47kEfC0t5l4d4cDIA" field="RADIO" name="USE_LOGEIP" value="true"/>
+    <elementParameter xmi:id="_4QWLyI7kEfC0t5l4d4cDIA" field="TEXT" name="MESSAGE" value="&quot;${body}&quot;"/>
+    <elementParameter xmi:id="_4QWLyY7kEfC0t5l4d4cDIA" field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <elementParameter xmi:id="_4QWLyo7kEfC0t5l4d4cDIA" field="LABEL" name="ROUTE_BREAKPOINT_EXAMPLE" value="Example: Lauguages=Simple, Expression=&quot;${body} contains 'Camel'&quot;"/>
+  </node>
+  <connection xmi:id="_4QWLy47kEfC0t5l4d4cDIA" connectorName="ROUTE" label="route1" lineStyle="14" metaname="cREST_1" offsetLabelX="0" offsetLabelY="0" source="cREST_1" target="cProcessor_1">
+    <elementParameter xmi:id="_4QWLzI7kEfC0t5l4d4cDIA" field="TEXT" name="UNIQUE_NAME" value="route1" show="false"/>
+  </connection>
+  <connection xmi:id="_4QWLzY7kEfC0t5l4d4cDIA" connectorName="ROUTE" label="route3" lineStyle="14" metaname="cProcessor_1" offsetLabelX="0" offsetLabelY="0" source="cProcessor_1" target="cLog_1">
+    <elementParameter xmi:id="_4QWLzo7kEfC0t5l4d4cDIA" field="TEXT" name="UNIQUE_NAME" value="route3" show="false"/>
+  </connection>
+  <subjob xmi:id="_4QWLz47kEfC0t5l4d4cDIA">
+    <elementParameter xmi:id="_4QWL0I7kEfC0t5l4d4cDIA" field="TEXT" name="UNIQUE_NAME" value="cConfig_1" show="false"/>
+  </subjob>
+  <subjob xmi:id="_4QWL0Y7kEfC0t5l4d4cDIA">
+    <elementParameter xmi:id="_4QWL0o7kEfC0t5l4d4cDIA" field="TEXT" name="UNIQUE_NAME" value="cREST_1" show="false"/>
+  </subjob>
+  <subjob xmi:id="_4QWL047kEfC0t5l4d4cDIA">
+    <elementParameter xmi:id="_4QWL1I7kEfC0t5l4d4cDIA" field="TEXT" name="UNIQUE_NAME" value="cProcessor_1" show="false"/>
+  </subjob>
+  <subjob xmi:id="_4QWL1Y7kEfC0t5l4d4cDIA">
+    <elementParameter xmi:id="_4QWL1o7kEfC0t5l4d4cDIA" field="TEXT" name="UNIQUE_NAME" value="cLog_1" show="false"/>
+  </subjob>
+</talendfile:ProcessType>
